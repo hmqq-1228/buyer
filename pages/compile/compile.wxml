@@ -1,0 +1,64 @@
+<view class='product_box'>
+  <input class='supply' placeholder="供货方号"></input>
+  <input class='product_name' placeholder="商品名称"></input>
+  <view class='img_box'>
+    <view class='word'>图片</view>
+    <view class='add_img' bindtap="chooseImage">
+      <image src='/images/add_img.png'></image>
+    </view>
+    <view class='add_img_box'>
+      <!-- 存放上传的图片的盒子 -->
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap imgs">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">
+            <image src='/images/×.png' class='close'></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='supplier_box'>
+    <input class='supplier' value='{{supplier[supplier_index]}}'></input>
+    <picker bindchange="bindPicker_supplier" value="{{supplier_index}}" range="{{supplier}}">
+      <view class="picker">
+        <image src='/images/jinru.png' class='img'></image>
+      </view>
+    </picker>
+  </view>
+  <view class='color_box'>
+    <input class='color' value='{{color[color_index]}}'></input>
+    <picker bindchange="bindPicker_color" value="{{color_index}}" range="{{color}}">
+      <view class="picker">
+        <image src='/images/jinru.png' class='img'></image>
+      </view>
+    </picker>
+  </view>
+  <view class='texture_box'>
+    <input class='texture' value='{{material[material_index]}}'></input>
+    <picker bindchange="bindPicker_material" value="{{material_index}}" range="{{material}}">
+      <view class="picker">
+        <image src='/images/jinru.png' class='img'></image>
+      </view>
+    </picker>
+  </view>
+  <input class='purchase_price' placeholder="采购单价"></input>
+  <view class='procurement_methods_box'>
+    <input class='procurement_methods' value='{{mode[mode_index]}}'></input>
+    <picker bindchange="bindPicker_mode" value="{{model_index}}" range="{{mode}}">
+      <view class="picker">
+        <image src='/images/jinru.png' class='img'></image>
+      </view>
+    </picker>
+  </view>
+  <input class='moq' placeholder="最小起订量"></input>
+  <input class='delivery_cycle' placeholder="供货周期"></input>
+  <input class='zhjs' placeholder="转换基数"></input>
+  <input class='note' placeholder="采购备注"></input>
+  <view class='btn_box'>
+    <button type='warn' size='mini' class='btn1'>删除</button>
+    <button type='primary' size='mini' class='btn2'>保存</button>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<view class='details_box'>
+  <!-- 产品开发表述 -->
+  <view class='statement'>
+    <text>产品开发表述</text>
+    <image src='/images/menu5.png' class='menu_img' bindtap='menu_img'></image>
+  </view>
+  <!-- 菜单 -->
+  <view class='menu {{switch}}'>
+    <view class='words' bindtap='delete_words'>批量删除</view>
+  </view>
+  <!-- 产品描述 -->
+  <view class='describe_box'>
+    <view class='describe_title'>产品描述</view>
+    <view class='describe_content'>
+      <image class='rhombus' src='/images/rhombus.png'></image>
+      <text>ASM</text>
+      <image class='rhombus' src='/images/rhombus.png'></image>
+      <text>2019春季新款复古雪纺印花连衣裙V领长袖衬衫裙子长款女装</text>
+    </view>
+  </view>
+  <view class='demand_money'>
+    <view class='demand'>需求款数：3</view>
+    <view class='money'>找货款数：2</view>
+  </view>
+  <view class='img_word'>
+    <view class='word'>图片</view>
+    <image class='specimen' src='{{img_arr[0]}}' bindtap="handleImagePreview"></image>
+  </view>
+  <!-- 产品开发清单 -->
+  <view class='list_box'>
+    <view>产品开发清单</view>
+    <view class='add' bindtap='product'>添加产品</view>
+  </view>
+  <view style='background: #f2f2f2;'>
+    <view class='nr' wx:for="{{array}}" wx:key="this">
+      <view class='size_particulars'>
+        <view class='size'>{{item.num}}</view>
+        <view class='particulars'>{{item.jieshao}}</view>
+      </view>
+      <view class='compile' bindtap='compile'>编辑</view>
+    </view>
+  </view>
+  <view>
+  </view>
+  <view class='kongbai'></view>
+  <button class='btn'>提交</button>
+</view>
