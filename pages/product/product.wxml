@@ -1,6 +1,15 @@
 <view class='product_box'>
-  <input class='supply' placeholder="供货方号"></input>
-  <input class='product_name' placeholder="商品名称"></input>
+  <input class='supply' placeholder="供方货号" bindblur='supply_blur'></input>
+  <!-- 供方单位 -->
+  <view class='supplier_unit_box'>
+    <picker class='unit' bindchange="bindPicker_unit" value="{{unit_index}}" range="{{unit}}" range-key="{{'gc_name'}}">
+      <view class="picker">
+        供方单位：{{unit[unit_index].gc_name}}
+      </view>
+    </picker>
+    <image src='/images/jinru.png' class='img'></image>
+  </view>
+  <input class='product_name' placeholder="商品名称" bindblur='name'></input>
   <view class='img_box'>
     <view class='word'>图片</view>
     <view class='add_img' bindtap="chooseImage">
@@ -13,51 +22,47 @@
           <!-- 图片缩略图  -->
           <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
           <!-- 移除图片的按钮  -->
-         <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">
-            <image src='/images/×.png' class='close'></image>
+         <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">删除
+            <!-- <image src='/images/×.png' class='close'></image> -->
           </view>
         </view>
       </block>
     </view>
-  </view>
+  </view> 
   <view class='supplier_box'>
-    <input class='supplier' value='{{supplier[supplier_index]}}'></input>
-    <picker bindchange="bindPicker_supplier" value="{{supplier_index}}" range="{{supplier}}">
-      <view class="picker">
-        <image src='/images/jinru.png' class='img'></image>
-      </view>
-    </picker>
+    <!-- 供应商 -->
+    <input type='text' class='supplier' value='{{supplier_val}}' placeholder="供应商" bindinput='select' bindblur='supplier' ></input>
+    <!-- 模糊查询下拉 -->
+    <view class='select {{select}}'>
+      <scroll-view scroll-y style="height: 400rpx;">
+        <view class='sel_name' wx:for="{{select_arr}}" wx:key="this" bindtap='supplier_val' data-index='{{index}}'>
+          {{item.sl_supplier_name}}
+        </view>
+      </scroll-view>
+    </view>
   </view>
   <view class='color_box'>
-    <input class='color' value='{{color[color_index]}}'></input>
-    <picker bindchange="bindPicker_color" value="{{color_index}}" range="{{color}}">
-      <view class="picker">
-        <image src='/images/jinru.png' class='img'></image>
-      </view>
-    </picker>
+    <input class='color' placeholder="颜色" bindblur='color' value='{{color[color_index]}}'></input>
   </view>
   <view class='texture_box'>
-    <input class='texture' value='{{material[material_index]}}'></input>
-    <picker bindchange="bindPicker_material" value="{{material_index}}" range="{{material}}">
-      <view class="picker">
-        <image src='/images/jinru.png' class='img'></image>
-      </view>
-    </picker>
+    <!-- 材质 -->
+    <input class='texture' placeholder="材质" bindblur='texture'  value='{{material[material_index]}}'></input>
   </view>
-  <input class='purchase_price' placeholder="采购单价"></input>
+  <input type='digit' class='purchase_price' bindblur='purchase_price' placeholder="采购单价"></input>
   <view class='procurement_methods_box'>
-    <input class='procurement_methods' value='{{mode[mode_index]}}'></input>
-    <picker bindchange="bindPicker_mode" value="{{model_index}}" range="{{mode}}">
+    <!-- 采购方式 -->
+    <picker class='unit' bindchange="bindPicker_mode" value="{{mode_index}}" range="{{mode}}">
       <view class="picker">
-        <image src='/images/jinru.png' class='img'></image>
+        采购方式：{{mode[mode_index]}}
       </view>
     </picker>
+    <image src='/images/jinru.png' class='img'></image>
   </view>
-  <input class='moq' placeholder="最小起订量"></input>
-  <input class='delivery_cycle' placeholder="供货周期"></input>
-  <input class='zhjs' placeholder="转换基数"></input>
-  <input class='note' placeholder="采购备注"></input>
+  <input type='number' class='moq' bindblur='moq' placeholder="最小起订量"></input>
+  <input type='number' class='delivery_cycle' bindblur='delivery_cycle' placeholder="供货周期"></input>
+  <input type='number' class='zhjs' bindblur='zhjs' placeholder="转换基数"></input>
+  <input class='note' bindblur='note' placeholder="采购备注"></input>
   <view class='kongbai'></view>
-  <button class='btn1'>保存并继续</button>
-  <button class='btn2'>保存并退出</button>
+  <button type="primary" class='btn1' bindtap='baocun'>保存并继续</button>
+  <button type="primary" class='btn2' bindtap='fanhui'>保存并退出</button>
 </view>

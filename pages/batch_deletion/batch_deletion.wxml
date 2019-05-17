@@ -15,16 +15,17 @@
   <view class="check_box">
     <checkbox-group bindchange="checkboxChange">
       <label class="checkbox list" wx:for="{{array}}" wx:key="this">
-        <checkbox class='cbs' value="{{item.id}}" checked="{{item.checked}}" />
+        <checkbox class='cbs' value="{{item.dard_reply_det}}" checked="{{item.checked}}" />
         <view style='width:90%;margin-left:20rpx;'>
-          <view class='order'>{{item.order}}</view>
-          <view class='jianjie'>{{item.jianjie}}</view>
+          <view class='order'>{{item.dard_prod_name}}</view>
+          <view class='jianjie'>{{item.dard_sup_no}}</view>
         </view>
       </label>
     </checkbox-group>
   </view>
+  <view class='no_more {{no_more}}'>没有更多数据</view>
   <view class='kongbai'></view>
   <view class='btn'>
-    <button type='warn'>确认删除</button>
+    <button type='warn' bindtap='delete'>确认删除</button>
   </view>
 </view>

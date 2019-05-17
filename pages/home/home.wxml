@@ -2,33 +2,23 @@
   <!-- 搜索框 -->
   <view class='search_box'>
     <view class="section">
-      <input class='search_input' placeholder="搜索" placeholder-class="placeholders" />
+      <input class='search_input' value='{{keywords}}' confirm-type="search" placeholder="搜索" placeholder-class="placeholders" bindinput="change_search" bindconfirm="search"/>
     </view>
-    <image class='search_img' src='/images/search.png'></image>
-    <text class='cancel'>取消</text>
+    <image class='search_img' src='/images/search.png' bindtap='search'></image>
+    <text class='cancel' bindtap='cancel'>取消</text>
   </view>
   <!-- 筛选 -->
   <view class='screen_box'>
     <view class='condition'>
-      <view class='time'>
-        <picker bindchange="bindPicker_time" value="{{time_arr_index}}" range="{{time_arr}}">
-          <view class="picker {{color_time}}">
-            {{time_arr[time_arr_index]}}
-          </view>
-        </picker>
+      <view class='time' bindtap='time'>
+        <view class='{{color_time}}'>时间</view>
         <image class='{{time_hui}}' src='/images/sanjiao_hui.png'></image>
-        <image class='{{time_true}}' src='/images/sanjiao_true.png'></image>
-        <image class='{{time_dao}}' src='/images/sanjiao_dao.png'></image>
+        <image class='{{time_zheng}}' src='/images/sanjiao_zheng.png'></image>
       </view>
-      <view class='grade'>
-        <picker bindchange="bindPicker_grade" value="{{grade_arr_index}}" range="{{grade_arr}}">
-          <view class="picker {{color_grade}}">
-            {{grade_arr[grade_arr_index]}}
-          </view>
-        </picker>
+      <view class='grade' bindtap='grade'>
+        <view class='{{color_grade}}'>等级</view>
         <image class='{{grade_hui}}' src='/images/sanjiao_hui.png'></image>
-        <image class='{{grade_true}}' src='/images/sanjiao_true.png'></image>
-        <image class='{{grade_dao}}' src='/images/sanjiao_dao.png'></image>
+        <image class='{{grade_zheng}}' src='/images/sanjiao_zheng.png'></image>
       </view>
     </view>
     <view class='name'>
@@ -37,13 +27,14 @@
     </view>
   </view>
   <!-- 列表123456 -->
-  <view class='list' wx:for="{{array}}" wx:key="this" bindtap='details'>
-    <text class='thicker'>{{item.name}}</text>
-    <text class='thicker'>需求款数: {{item.paragraph_nums}}</text>
-    <text>开发申请人: {{item.user_name}}</text>
-    <text>等级: {{item.grade}}</text>
-    <text>期望完成日期: {{item.date}}</text>
+  <view class='list' wx:for="{{array}}" data-index='{{index}}' wx:key="this" bindtap='details'>
+    <text class='thicker'>{{item.dadd_prod_desc}}</text>
+    <text class='thicker'>需求款数: {{item.dadd_need_qty}}</text>
+    <text>开发申请人: {{item.us_user_name }}</text>  
+    <text>等级: {{item.gc_name}}</text>
+    <text>期望完成日期: {{item.dai_finish_date}}</text>
     <view class='activity'>活动</view>
     <image src='/images/jinru.png'></image>
   </view>
+  <view class='no_more {{no_more}}'>没有更多数据</view>
 </view>

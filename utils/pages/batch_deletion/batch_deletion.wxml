@@ -1,0 +1,30 @@
+<!-- 批量删除 -->
+<view class='batch_deletion_box'>
+  <view class='title__box'>
+    <view class='title'>
+      产品开发清单
+    </view>
+    <view class='all_select'>
+      <checkbox-group bindchange="check_all">
+        <label class="checkbox" wx:for="{{checks_all}}" wx:key='this'>
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" style='position:relative;top:-2.5px;' /> {{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="check_box">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox list" wx:for="{{array}}" wx:key="this">
+        <checkbox class='cbs' value="{{item.dard_reply_det}}" checked="{{item.checked}}" />
+        <view style='width:90%;margin-left:20rpx;'>
+          <view class='order'>{{item.dard_prod_name}}</view>
+          <view class='jianjie'>{{item.dard_sup_no}}</view>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='kongbai'></view>
+  <view class='btn'>
+    <button type='warn' bindtap='delete'>确认删除</button>
+  </view>
+</view>

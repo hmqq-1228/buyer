@@ -1,0 +1,74 @@
+<view class='details_box'>
+  <!-- 产品开发表述 -->
+  <view class='statement'>
+    <text>产品开发表述</text>
+    <image src='/images/menu5.png' class='menu_img' bindtap='menu_img'></image>
+  </view>
+  <!-- 菜单 -->
+  <view class='menu {{switch}}'>
+    <view class='words' bindtap='delete_words'>批量删除</view>
+  </view>
+  <!-- 产品描述 -->
+  <view class='describe_box'>
+    <view class='describe_title'>产品描述
+
+    </view>
+    <view class='describe_content'>
+
+      <text>{{details.dadd_prod_desc}}</text>
+    </view>
+  </view>
+  <view class='demand_money'>
+    <view class='demand'>需求款数：{{details.dadd_need_qty}}</view>
+    <view class='money'>找货款数：{{details.dard_need_qty}}</view>
+  </view>
+  <view class='img_word'>
+    <view class='word'>图片</view>
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;">
+      <image class='specimen' wx:if="{{checks == 1}}" src='{{item}}' bindtap="handleImagePreviews" data-index='{{index}}' wx:for="{{img_arr}}" wx:key='this'></image>
+      <view class='zanwu_img {{zanwu_img}}'>暂无图片</view>
+    </scroll-view>
+  </view>
+  <!-- 产品开发清单 -->
+  <view class='list_box'>
+    <view>产品开发清单</view>
+    <view class='add' bindtap='product'>添加产品</view>
+  </view>
+  <view style='background: #f2f2f2;padding-bottom:20rpx;'>
+    <view class='nr' wx:for="{{array}}" wx:key="this"> 
+      <view class='size_particulars'>
+        <view class='size'>{{item.dard_sup_no}}</view>
+        <view class='particulars'>{{item.dard_prod_name}}</view>
+      </view>
+      <view class='compile' data-index='{{index}}' bindtap='compile'>编辑</view>
+    </view>
+    <view class='zanwu {{zanwu}}'>
+      暂无清单
+    </view>
+  </view>
+  <view>
+  </view>
+  <view class='kongbai'></view>
+  <button class='btn' bindtap='submit'>提交</button>
+  <view class='toast-box' hidden='{{!ifName}}'>
+    <view class='toastbg'></view>
+    <view class='showToast'>
+      <view class='toast-title'>
+        <text>找货回复</text>
+      </view>
+      <view class='toast-main'>
+        <view class='toast-input'>
+          <input placeholder='请输入找货回复' bindinput='setValue' data-name='stuEidtName'></input>
+        </view>
+      </view>
+      <view class='toast-button'>
+        <view class='button1'>
+          <button type='warn' catchtap='cancel'>取消</button>
+        </view>
+        <view class='button2'>
+          <button type='primary' catchtap='confirm'>确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

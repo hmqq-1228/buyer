@@ -3,7 +3,6 @@
   height: 100%;
   background: #f2f2f2;
 }
-
 /* 供货方号 */
 
 .supply {
@@ -36,6 +35,21 @@
 
 .supplier {
   width: 93%;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+/* 供应单位 */
+
+.supplier_unit_box {
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fff;
+  height: 86rpx;
+  line-height: 86rpx;
+}
+.unit {
+  width: 100%;
   font-size: 28rpx;
   padding-left: 10rpx;
 }
@@ -93,6 +107,8 @@
   display: flex;
   border-bottom: 1rpx solid #ccc;
   background-color: #fff;
+  height: 86rpx;
+  line-height: 86rpx;
 }
 
 .procurement_methods {
@@ -141,24 +157,27 @@
   background-color: #fff;
 }
 
-.btn_box{
+.kongbai {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin: 40rpx 0;
+  height: 200rpx;
 }
+
 .btn1 {
-  width: 200rpx;
-  height: 80rpx;
-  line-height: 80rpx !important;
-  font-size: 32rpx !important;
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 100rpx;
+  z-index: 10;
 }
 
 .btn2 {
-  width: 200rpx;
-  height: 80rpx;
-  line-height: 80rpx !important;
-  font-size: 32rpx !important;
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
 }
 
 input {
@@ -197,26 +216,41 @@ input {
 .imgs {
   width: 30%;
   height: 160rpx;
-  position:relative; 
+    position: relative;
   margin-right: 3.33%;
 }
 
 .imgs image {
   width: 100%;
   height: 120rpx;
+
   margin: 20rpx auto;
 }
 
 .delete{
+  width: 200rpx;
   position: absolute;
-  top:0;
-  left: 84%;
+  bottom:30rpx;
+  left: 34%;
+  font-size: 26rpx;
+  color: red;
+} 
+.select{
+  width: 100%;
+  position: absolute;
+  top: 506rpx;
+  z-index: 10;
 }
-.close {
-  
-  width: 25rpx !important;
-  height: 25rpx !important;
-  /* margin-left: -40rpx;
-  margin-top: 15rpx; */
-  
+.sel_name{
+  width: 100%;
+  background: #f2f2f2;
+  border-bottom: 1px solid #CCC;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
 }

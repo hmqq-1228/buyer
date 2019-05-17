@@ -105,6 +105,7 @@
 }
 .thicker{
   color: #333;
+  width:80%;
 }
 .activity{
   width: 90rpx;
@@ -117,15 +118,17 @@
   top: 15rpx;
   right:50rpx;
 }
-.color1{
-  color: #3ba0eb !important;
-}
-.color2{
-  color: #333;
-}
 .hidden{
   display: none;
 }
 .show{
   display: block;
+}
+.no_more{
+  width: 100%;
+  background: #F2F2F2;
+  text-align: center;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }

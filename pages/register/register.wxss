@@ -1,0 +1,91 @@
+.register_box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #f2f2f2;
+}
+
+.img {
+  width: 355rpx;
+  height: 155rpx;
+  margin-top: 145rpx;
+  margin-left: 190rpx;
+}
+
+.words {
+  color: #1f90f7;
+  margin-top: 31rpx;
+  margin-left: 240rpx;
+}
+
+.username_box {
+  margin-left: 82rpx;
+  margin-top: 59rpx;
+}
+
+.username {
+  display: flex;
+  justify-content: space-between;
+  width: 568rpx;
+ height: 74rpx;
+  border-radius: 3%;
+  border: 1rpx solid #d1d1d1;
+  background-color: #fff;
+  padding-top: 13rpx;
+  padding-left: 12rpx;
+  font-size: 26rpx;
+}
+
+.username_img {
+  width: 53rpx;
+  height: 40rpx;
+  margin-top: 13rpx;
+  margin-right: 20rpx;
+}
+
+.password_box {
+  margin-left: 82rpx;
+  margin-top: 40rpx;
+}
+
+.password {
+  display: flex;
+  justify-content: space-between;
+  width: 568rpx;
+  height: 74rpx;
+  border-radius: 5%;
+  border: 1rpx solid #d1d1d1;
+  background-color: #fff;
+  padding-top: 13rpx;
+  padding-left: 12rpx;
+  font-size: 26rpx;
+}
+
+.password_img {
+  width: 53rpx;
+  height: 40rpx;
+  margin-top: 13rpx;
+  margin-right: 20rpx;
+}
+.psd_reg{
+  display: flex;
+}
+.psd{
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  margin-right: 65rpx;
+  margin-left: 117rpx;
+}
+.reg{
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  margin-right: 65rpx;
+  margin-left: 117rpx;
+}
+.btn{
+  width: 400rpx;
+  color: #fff;
+  background-color: #00CCFF;
+  border-radius: 67rpx;
+  margin-top: 70rpx;
+}

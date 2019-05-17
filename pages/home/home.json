@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "采购找货任务"
+  "navigationBarTitleText": "采购找货任务",
+  "enablePullDownRefresh": true
 }

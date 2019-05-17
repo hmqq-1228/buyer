@@ -3,6 +3,7 @@
 .details_box {
   width: 100%;
   height: 100%;
+  position: absolute;
   background: #f2f2f2;
 }
 
@@ -24,9 +25,9 @@
 .menu {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   top: 100rpx;
-  right: 30rpx;
+  right: 46rpx;
   border-radius: 10rpx;
   background-color: #fff;
   color: #fd2127;
@@ -39,6 +40,7 @@
 }
 
 .words {
+  font-size: 24rpx;
   box-sizing: border-box;
   padding: 10rpx 20rpx;
 }
@@ -50,7 +52,10 @@
 .show {
   display: flex;
 }
-
+.zanwu_img{
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
 /* 产品描述 */
 
 .describe_box {
@@ -121,8 +126,7 @@
 .specimen {
   width: 120rpx;
   height: 120rpx;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
+  margin: 10rpx;
 }
 
 /* 产品开发清单 */
@@ -170,7 +174,6 @@
 /* 第一行字 */
 
 .size {
-  width: 150rpx;
   color: #98959a;
   display: flex;
   flex-wrap: wrap-reverse;
@@ -206,6 +209,7 @@
 .kongbai {
   width: 100%;
   height: 100rpx;
+  background: #f2f2f2;
 }
 
 /* 按钮 */
@@ -216,4 +220,102 @@
   bottom: 0;
   background-color: #118ee9;
   color: #f2f2f2;
+}
+.zanwu{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #2196f3;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  text-align: center;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.toast-button {
+  display: flex;
+}
+
+.button1 {
+  width: 50%;
+}
+
+.button2 {
+  width: 50%;
+}
+
+.button1 button {
+  width: 100%;
+  background-color: white;
+  color: red;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.button2 button {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+}
+.no_more{
+  width: 100%;
+  background: #F2F2F2;
+  text-align: center;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }

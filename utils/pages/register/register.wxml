@@ -1,0 +1,26 @@
+<view class='register_box'>
+  <image src='/images/logo.png' class='img'></image>
+  <view class='words'>电商事业三部ERP</view>
+  <view class='username_box'>
+    <input type='text' class='username' value='{{us_user_name}}' placeholder='用户名' bindblur='username'>
+    <image class='username_img' src='/images/username_img.png'></image>
+    </input>
+  </view>
+  <view class='password_box'>
+    <input  type='{{type}}'  class='password' placeholder='密码' value='{{us_password}}' bindblur='password'>
+    <image class='password_img' src="{{isShow?'/images/eye.png':'/images/eye.png'}}" bindtap='showPassword'></image>
+    </input>
+  </view>
+  <view class='psd_reg'>
+  <checkbox-group bindchange="checkboxChange" class='psd'>
+    <label class="checkbox" wx:for="{{items}}" wx:key="this">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+      {{item.value}}
+    </label>
+  </checkbox-group>
+  <!-- <checkbox class='psd'>记住密码</checkbox> -->
+  <checkbox class='reg'>自动登录</checkbox>
+  </view>
+  <button class='btn' bindtap='btn'>登录</button>
+
+</view>
