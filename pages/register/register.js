@@ -49,7 +49,8 @@ Page({
     wx.request({
       url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/checklogin',
       data: {
-        us_user_id: e.detail.value
+        us_user_id: e.detail.value,
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -83,7 +84,8 @@ Page({
     wx.request({
       url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/checklogin',
       data: {
-        us_user_id: e.detail.value
+        us_user_id: e.detail.value,
+        env: 'false'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -127,6 +129,7 @@ Page({
       data: {
         us_user_id: gonghao,
         us_password: that.data.us_password,
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值

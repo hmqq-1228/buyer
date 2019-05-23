@@ -75,6 +75,7 @@ Page({
         str:that.data.str,
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -111,6 +112,7 @@ Page({
         total: 10,
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -165,6 +167,7 @@ Page({
           total: 10,
           getkey: us_user_id_pass,
           dai_who_find: dai_who_find,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值

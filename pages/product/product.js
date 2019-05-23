@@ -46,6 +46,7 @@ Page({
           keyword: e.detail.value,
           dai_who_find: dai_who_find,
           getkey: us_user_id_pass,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -254,7 +255,8 @@ Page({
             formData: {
               dard_bill_id: that.data.dadd_bill_id,
               getkey: us_user_id_pass,
-              directory_name: 'NEW_PROD_REPLY_PIC'
+              directory_name: 'NEW_PROD_REPLY_PIC',
+              env: 'true'
 
             },
             success: function(res) {
@@ -269,7 +271,7 @@ Page({
                 var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
                 wx.request({
                   url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/insert',
-                  method: 'POST',
+                  method: 'GET',
                   data: {
                     dadd_desc_det: that.data.dadd_desc_det,
                     dai_who_find: dai_who_find,
@@ -287,9 +289,10 @@ Page({
                     dard_convers_cnt: that.data.dard_convers_cnt,
                     dard_purchase_memo: that.data.dard_purchase_memo,
                     getkey: us_user_id_pass,
+                    env: 'true'
                   },
                   header: {
-                    "Content-Type": "application/x-www-form-urlencoded" // 默认值
+                    'content-type': 'application/json' // 默认值
                   },
                   success(res) {
                     wx.hideLoading();
@@ -323,7 +326,7 @@ Page({
         var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
         wx.request({
           url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/insert',
-          method: 'POST',
+          method: 'GET',
           data: {
             dadd_desc_det: that.data.dadd_desc_det,
             dai_who_find: dai_who_find,
@@ -341,9 +344,10 @@ Page({
             dard_convers_cnt: that.data.dard_convers_cnt,
             dard_purchase_memo: that.data.dard_purchase_memo,
             getkey: us_user_id_pass,
+            env: 'true'
           },
           header: {
-            "Content-Type": "application/x-www-form-urlencoded" // 默认值
+            'content-type': 'application/json'// 默认值
           },
           success(res) {
             wx.hideLoading()
@@ -425,7 +429,8 @@ Page({
             formData: {
               dard_bill_id: that.data.dadd_bill_id,
               getkey: us_user_id_pass,
-              directory_name: 'NEW_PROD_REPLY_PIC'
+              directory_name: 'NEW_PROD_REPLY_PIC',
+              env: 'true'
             },
             success: function(res) {
               var jsonObj = JSON.parse(res.data);
@@ -439,7 +444,7 @@ Page({
                 var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
                 wx.request({
                   url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/insert',
-                  method: 'POST',
+                  method: 'GET',
                   data: {
                     dadd_desc_det: that.data.dadd_desc_det,
                     dai_who_find: dai_who_find,
@@ -457,9 +462,10 @@ Page({
                     dard_convers_cnt: that.data.dard_convers_cnt,
                     dard_purchase_memo: that.data.dard_purchase_memo,
                     getkey: us_user_id_pass,
+                    env: 'true'
                   },
                   header: {
-                    "Content-Type": "application/x-www-form-urlencoded" // 默认值
+                    'content-type': 'application/json'// 默认值
                   },
                   success(res) {
                     // console.log(that.data.dard_supplier_id)
@@ -497,7 +503,7 @@ Page({
         var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
         wx.request({
           url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/insert',
-          method: 'POST',
+          method: 'GET',
           data: {
             dadd_desc_det: that.data.dadd_desc_det,
             dai_who_find: dai_who_find,
@@ -515,9 +521,10 @@ Page({
             dard_convers_cnt: that.data.dard_convers_cnt,
             dard_purchase_memo: that.data.dard_purchase_memo,
             getkey: us_user_id_pass,
+            env: 'true'
           },
           header: {
-            "Content-Type": "application/x-www-form-urlencoded" // 默认值
+            'content-type': 'application/json' // 默认值
           },
           success(res) {
             wx.hideLoading()
@@ -564,6 +571,7 @@ Page({
       data: {
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值

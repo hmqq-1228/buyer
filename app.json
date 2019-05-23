@@ -2,6 +2,8 @@
   "pages": [
     "pages/register/register",
     "pages/home/home",
+    
+    
     "pages/compile/compile",
     "pages/product/product",
     "pages/batch_deletion/batch_deletion",

@@ -101,6 +101,7 @@ Page({
             dai_who_find: dai_who_find,
             dadd_find_memo: that.data.summary_content,
             dadd_desc_det: that.data.dadd_desc_det,
+            env: 'true'
           },
           header: {
             'content-type': 'application/json' // 默认值
@@ -133,6 +134,7 @@ Page({
           dai_who_find: dai_who_find,
           dadd_find_memo: that.data.summary_content,
           dadd_desc_det: that.data.dadd_desc_det,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -174,7 +176,8 @@ Page({
       title: '加载中',
     })
     that.setData({
-      no_more: 'hidden'
+      no_more: 'hidden',
+      page:1
     })
     var dai_who_find = wx.getStorageSync('us_user_id')
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
@@ -184,6 +187,7 @@ Page({
           dai_who_find: dai_who_find,
           dadd_desc_det: that.data.dadd_desc_det,
           getkey: us_user_id_pass,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -208,7 +212,7 @@ Page({
               img_arr: dadd_prod_pic_path
             })
             that.data.img_arr.forEach(function (item, index,arr) {
-              var item_ = "https://cjimage.panduo.com.cn/upload/NEW_PROD_DEVELOP_PIC/"+ dadd_bill_ids+'/' + item
+              var item_ = "http://cjimage.panduo.com.cn/upload/NEW_PROD_DEVELOP_PIC/"+ dadd_bill_ids+'/' + item
               var items = "img_arr[" + index + "]";
               that.setData({
                 [items]: item_
@@ -231,6 +235,7 @@ Page({
           page:1,
           total:10,
           getkey: us_user_id_pass,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -296,6 +301,7 @@ Page({
           page: that.data.page,
           total: 10,
           getkey: us_user_id_pass,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值

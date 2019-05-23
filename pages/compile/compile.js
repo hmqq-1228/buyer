@@ -45,6 +45,7 @@ Page({
           keyword: e.detail.value,
           getkey: us_user_id_pass,
           dai_who_find: dai_who_find,
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -213,6 +214,7 @@ Page({
         dard_reply_det: that.data.dard_reply_det,
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -281,7 +283,8 @@ Page({
                 formData: {
                   dard_bill_id: that.data.dard_bill_ids,
                   getkey: us_user_id_pass,
-                  directory_name: 'NEW_PROD_REPLY_PIC'
+                  directory_name: 'NEW_PROD_REPLY_PIC',
+                  env: 'true'
                 },
                 success: function (res) {
                   var jsonObj = JSON.parse(res.data);
@@ -295,7 +298,7 @@ Page({
                     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
                     wx.request({
                       url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/update',
-                      method: 'POST',
+                      method: 'GET',
                       data: {
                         dard_reply_det: that.data.dard_reply_det,
                         dard_sup_no: that.data.details.dard_sup_no,
@@ -313,9 +316,10 @@ Page({
                         dard_purchase_memo: that.data.details.dard_purchase_memo == null ? '' : that.data.details.dard_purchase_memo,
                         getkey: us_user_id_pass,
                         dai_who_find: dai_who_find,
+                        env: 'true'
                       },
                       header: {
-                        "Content-Type": "application/x-www-form-urlencoded" // 默认值
+                        'content-type': 'application/json' // 默认值
                       },
                       success(res) {
                         wx.hideLoading()
@@ -340,7 +344,7 @@ Page({
         var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
         wx.request({
           url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/update',
-          method: 'POST',
+          method: 'GET',
           data: {
             dard_reply_det: that.data.dard_reply_det,
             dard_sup_no: that.data.details.dard_sup_no,
@@ -358,9 +362,10 @@ Page({
             dard_purchase_memo: that.data.details.dard_purchase_memo == null ? '' : that.data.details.dard_purchase_memo,
             getkey: us_user_id_pass,
             dai_who_find: dai_who_find,
+            env: 'true'
           },
           header: {
-            "Content-Type": "application/x-www-form-urlencoded" // 默认值
+            'content-type': 'application/json'// 默认值
           },
           success(res) {
             wx.hideLoading()
@@ -417,6 +422,7 @@ Page({
       data: {
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -433,6 +439,7 @@ Page({
             dard_reply_det: that.data.dard_reply_det,
             getkey: us_user_id_pass,
             dai_who_find: dai_who_find,
+            env: 'true'
             // dard_supplier_id: that.data.dard_supplier_id
           },
           header: {
