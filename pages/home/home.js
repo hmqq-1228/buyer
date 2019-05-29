@@ -55,7 +55,7 @@ Page({
         level: that.data.level,
         getkey: us_user_id_pass,
         total: 10,
-        env:'false'
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -104,7 +104,7 @@ Page({
         level: that.data.level,
         total: 10,
         getkey:us_user_id_pass,
-        env:'false'
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -148,7 +148,7 @@ Page({
         page: 1,
         date: that.data.date,
         level: that.data.level,
-        env:'false'
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -210,7 +210,7 @@ Page({
         date:'',
         // level: 0,
         total: 10,
-        env:'false'
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -266,7 +266,7 @@ Page({
         date: '',
         level: 0,
         total: 10,
-        env:'false'
+        env:'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -308,7 +308,7 @@ Page({
             date: that.data.date,
             level: that.data.level,
             total: 10,
-            env:'false'
+            env:'true'
           },
           header: {
             'content-type': 'application/json' // 默认值

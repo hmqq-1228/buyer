@@ -46,7 +46,7 @@ Page({
           keyword: e.detail.value,
           dai_who_find: dai_who_find,
           getkey: us_user_id_pass,
-          env: 'false'
+          env: 'true'
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -256,7 +256,7 @@ Page({
               dard_bill_id: that.data.dadd_bill_id,
               getkey: us_user_id_pass,
               directory_name: 'NEW_PROD_REPLY_PIC',
-              env: 'false'
+              env: 'true'
 
             },
             success: function(res) {
@@ -289,7 +289,7 @@ Page({
                     dard_convers_cnt: that.data.dard_convers_cnt,
                     dard_purchase_memo: that.data.dard_purchase_memo,
                     getkey: us_user_id_pass,
-                    env: 'false'
+                    env: 'true'
                   },
                   header: {
                     'content-type': 'application/json' // 默认值
@@ -344,7 +344,7 @@ Page({
             dard_convers_cnt: that.data.dard_convers_cnt,
             dard_purchase_memo: that.data.dard_purchase_memo,
             getkey: us_user_id_pass,
-            env: 'false'
+            env: 'true'
           },
           header: {
             'content-type': 'application/json'// 默认值
@@ -430,7 +430,7 @@ Page({
               dard_bill_id: that.data.dadd_bill_id,
               getkey: us_user_id_pass,
               directory_name: 'NEW_PROD_REPLY_PIC',
-              env: 'false'
+              env: 'true'
             },
             success: function(res) {
               var jsonObj = JSON.parse(res.data);
@@ -462,7 +462,7 @@ Page({
                     dard_convers_cnt: that.data.dard_convers_cnt,
                     dard_purchase_memo: that.data.dard_purchase_memo,
                     getkey: us_user_id_pass,
-                    env: 'false'
+                    env: 'true'
                   },
                   header: {
                     'content-type': 'application/json'// 默认值
@@ -521,7 +521,7 @@ Page({
             dard_convers_cnt: that.data.dard_convers_cnt,
             dard_purchase_memo: that.data.dard_purchase_memo,
             getkey: us_user_id_pass,
-            env: 'false'
+            env: 'true'
           },
           header: {
             'content-type': 'application/json' // 默认值
@@ -571,7 +571,7 @@ Page({
       data: {
         getkey: us_user_id_pass,
         dai_who_find: dai_who_find,
-        env: 'false'
+        env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
