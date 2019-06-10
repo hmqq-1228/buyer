@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/register/register",
     "pages/home/home",
     "pages/compile/compile",
     "pages/product/product",
     "pages/batch_deletion/batch_deletion",
     "pages/details/details"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

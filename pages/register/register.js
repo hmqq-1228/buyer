@@ -50,7 +50,7 @@ Page({
       url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/checklogin',
       data: {
         us_user_id: e.detail.value,
-        env:'true'
+        env:'false'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -78,6 +78,7 @@ Page({
       }
     })
   },
+
   // 点击键盘上的完成按钮时
   us_user_id_confirm: function (e) {
     var that = this
@@ -129,13 +130,14 @@ Page({
       data: {
         us_user_id: gonghao,
         us_password: that.data.us_password,
-        env:'true'
+        env:'false'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
         if (res.data.status == 0){
+          
           var util = md5.hexMD5(gonghao + 'panduo2234!@#' + gonghao)
           wx.setStorage({
             key: 'us_user_id_pass',
@@ -160,8 +162,8 @@ Page({
             key: 'us_user_name',
             data: res.data.us_user_name,
           })
-          wx.navigateTo({
-            url: '../home/home',
+          wx.switchTab({
+            url: '/pages/main/main'
           })
         } else if(res.data.status == 1){
           wx.showToast({
@@ -182,9 +184,6 @@ Page({
       }
     })
   },
-  
-
-
   /**
    * 生命周期函数--监听页面加载
    */

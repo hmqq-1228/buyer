@@ -27,5 +27,4 @@
   <checkbox class='reg'>自动登录</checkbox>
   </view>
   <button class='btn' bindtap='btn'>登录</button>
-
 </view>

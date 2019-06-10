@@ -1,0 +1,30 @@
+<view class='main_box'>
+  <view class='title_box'>
+    <image class='title_img' src='/images/timg.jpg'></image>
+    <view class='title_word'>欢迎使用潘朵新品开发系统，{{name}}</view>
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{arr}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='img_box'>
+    <view class='nav_box'>
+        <image src='/images/manage.png' class='imgs' bindtap='manage'></image>
+        <text class='text'>{{nav[0].fn_func_name}}</text>
+    </view>
+    <view class='nav_box'>
+        <image src='/images/task.png' class='imgs' bindtap='task'></image>
+        <text class='text'>{{nav[1].fn_func_name}}</text>
+    </view>
+    <view class='nav_box'>
+        <image src='/images/find.png' class='imgs' bindtap='find'></image>
+        <text class='text'>{{nav[2].fn_func_name}}</text>
+    </view>
+  </view>
+  <view class='word_box'>
+    <view class='words'>您今日还有{{total}}个待处理的找货任务</view>
+  </view>
+</view>

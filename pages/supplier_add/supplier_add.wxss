@@ -1,0 +1,80 @@
+.supplier_box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #F2F2F2;
+}
+
+.use{
+  width: 100%;
+  height: 90rpx;
+  padding-left: 80rpx;
+  border: 1px solid gainsboro;
+  background-color: #Ffff;
+}
+.use2{
+  width: 100%;
+  height: 120rpx;
+  border: 1px solid gainsboro;
+  background-color: #Ffff;
+}
+.word{
+  position: relative;
+  top: -75rpx;
+  left: 10rpx;
+  display: inline-block;
+  font-size: 14px;
+  color: #808080;
+}
+
+.word2{
+  position: relative;
+  top: -109rpx;
+  left: 10rpx;
+  font-size: 14px;
+  color: #808080;
+}
+.name{
+  height: 90rpx;
+}
+.full_name{
+  height: 90rpx;
+}
+.linkname{
+  height: 90rpx;
+}
+.phone{
+  height: 90rpx;
+}
+
+.web{
+  height:120rpx; 
+}
+.email{
+  height:120rpx; 
+}
+.remark{
+  height:120rpx; 
+}
+.kongbai {
+  width: 100%;
+  height: 200rpx;
+}
+
+.btn1 {
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 100rpx;
+  z-index: 10;
+}
+
+.btn2 {
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}

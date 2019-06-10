@@ -1,0 +1,34 @@
+<view class='home_box'>
+  <!-- 搜索框 -->
+  <view class='search_box'>
+    <view class="section">
+      <input class='search_input' value='{{keywords}}' confirm-type="search" placeholder="输入关键词搜索供应商" placeholder-class="placeholders" bindinput="change_search" bindconfirm="search"/>
+    
+    <!-- 模糊查询下拉 -->
+    <view class='select {{select}}'>
+      <scroll-view scroll-y style="height: 400rpx;">
+        <view class='sel_name' wx:for="{{select_arr}}" wx:key="this" bindtap='supplier_val' data-index='{{index}}'>
+          {{item.sl_supplier_name}}
+        </view>
+      </scroll-view>
+    </view>
+    </view>
+    <image class='search_img' src='/images/search.png' bindtap='search'></image>
+    <image class='search_img1'src='/images/white_cha.png' ></image>
+    <view class='jiahao'>
+  <image class='search_jia'src='/images/jiahao.png' bindtap='go_supplier'></image>
+  </view>
+  </view>
+  
+  
+  <!-- 列表 -->
+<view class='list' wx:for="{{array}}" data-index='{{index}}' wx:key="this" >
+    <text class='monicker'>{{item.sl_supplier_name}}</text>
+    <text class='thicker'>采购员：{{item.us_user_name}}</text>
+    <text class='linkman'>联系人：{{item.sl_linkman}}</text>  
+    <text class='tel'>电话：{{item.sl_phone}}</text>
+    <view class='activity'>{{item.sl_status}}</view>
+    <image src='/images/jinru.png' bindtap='go_complie'></image>
+  </view>
+
+</view>
