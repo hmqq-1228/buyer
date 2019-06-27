@@ -1,0 +1,226 @@
+.develop_box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #F2F2F2;
+}
+.describe_box{
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  border: 1px solid gainsboro;
+}
+.describe_word{
+  font-size: 24rpx;
+  color: #A09797;
+  padding:10rpx ;
+}
+.describe_nr{
+  width: 99%;
+  height: 74rpx;
+  padding-bottom: 10rpx;
+}
+.add_box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid gainsboro;
+  background-color: #Ffff;
+  height: 80rpx;
+}
+text{
+  font-size: 24rpx;
+  color: #808080;
+  flex-shrink: 0;
+  margin-left: 10rpx;
+}
+input{
+  width: 100%;
+  margin-left: 15rpx;
+}
+
+
+.add_box_shu{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid gainsboro;
+  background-color: #Ffff;
+  height: 80rpx;
+  margin-top: 18rpx;
+}
+text{
+  font-size: 28rpx;
+  color: #808080;
+  flex-shrink: 0;
+  margin-left: 10rpx;
+}
+input{
+  width: 100%;
+  margin-left: 15rpx;
+}
+/* 第一行 */
+.one{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+}
+.left{
+  width: 47%;
+  height: 60rpx;
+  background-color: #ccc;
+  font-size: 26rpx;
+  padding-left:20rpx;
+  padding-top: 30rpx;
+}
+.left_fu{
+  width: 50%;
+  height: 60rpx;
+  background-color: #ccc;
+  font-size: 26rpx;
+  margin-left:-94rpx; 
+  padding-top: 30rpx;
+}
+.right{
+  width: 135%;
+  height: 90rpx;
+  font-size: 26rpx;
+  margin-left: 145rpx;
+  margin-top:-66rpx;
+}
+.right_fa{
+  width: 50%;
+  height: 90rpx;
+  font-size: 26rpx;
+  margin-left: -5rpx;
+}
+/* 第二行 */
+.two{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+.right1{
+  display: flex;
+}
+.right_{
+  font-size: 26rpx;
+  color: #ccc;
+  padding-top:32rpx;
+  width: 156rpx;
+  margin-left: 14rpx;
+}
+/* .tearea{
+  display: flex;
+  background-color: #fff;
+}
+.tearea_word{
+font-size: 24rpx;
+} */
+
+
+.amount{
+  width: 96.7%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #ccc;
+  margin-bottom: 40rpx;
+  border: 1px solid gainsboro;
+}
+.img_box {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  background: #FFF;
+}
+
+.word {
+  width: 100%;
+  height: 50rpx;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  background: #FFF;
+}
+
+.add_img {
+  width: 20%;
+  height: 160rpx;
+  padding-left: 20rpx;
+}
+
+.add_img image {
+  width: 85%;
+  height: 120rpx;
+  margin: 20rpx auto;
+}
+
+.add_img_box {
+  width: 60%;
+  display: flex;
+}
+
+.imgs {
+  width: 30%;
+  height: 160rpx;
+    position: relative;
+  margin-right: 3.33%;
+}
+
+.imgs image {
+  width: 100%;
+  height: 120rpx;
+
+  margin: 20rpx auto;
+}
+
+.delete{
+  width: 200rpx;
+  position: absolute;
+  bottom:30rpx;
+  left: 34%;
+  font-size: 26rpx;
+  color: red;
+} 
+.btn1 {
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 100rpx;
+  z-index: 10;
+}
+
+.btn2 {
+  width: 100%;
+  background-color: #118ee9;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+.select{
+  width: 36%;
+  position: absolute;
+  top: 217rpx;
+   left: 479rpx;
+  z-index: 10;
+}
+.sel_name{
+  width: 100%;
+  background: #f2f2f2;
+  border-bottom: 1px solid #CCC;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}

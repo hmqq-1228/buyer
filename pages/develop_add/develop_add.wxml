@@ -1,0 +1,43 @@
+<view class='develop_box'>
+  <!-- 开发类型 -->
+  <view class="section">
+    <view class="section__title">开发类型</view>
+    <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}" >
+      <view class="picker">
+       {{array1[index1]}}
+        <image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+  <!-- 开发等级 -->
+  <view class="section">
+    <view class="section__title" value='{{dai_level.detail}}'>开发等级</view>
+    <picker bindchange="bindPickerChange2" value="{{dai_level}}" range="{{array2}}" range-key="gc_name">
+      <view class="picker">
+       {{dai_level}}
+        <image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+  <!-- 期望完成日期 -->
+  <view class="section">
+    <view class="section__title">期望完成日期(最早为明天)</view>
+    <picker mode="date" value="{{date}}" start="{{datete}}" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}<image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+
+  <view class='end_box'>
+    <!-- 找货人 -->
+    <view class='person_looking' >找货人：{{zhaohuoren}}</view>
+    <!-- 开发申请人 -->
+     <view class='shenqing_word'>开发申请人：</view>
+    <input class='shenqing' type='text' value='{{shenqingren}}' placeholder-class='placeholder' bindinput='shenqingren'/>
+    <view class='select' wx:if="{{select_check}}">
+      <text bindtap='gonghao' wx:for="{{us_user_names}}" data-index='{{index}}' wx:key="this">{{item.us_user_name}}</text>
+    </view>
+  </view>
+  <button class='btn' type='primary' size='default' bindtap='btn1'>保存</button>
+</view>

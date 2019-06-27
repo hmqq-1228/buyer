@@ -47,10 +47,10 @@ Page({
   us_user_id:function(e){
     var that = this
     wx.request({
-      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/checklogin',
+      url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/checklogin',
       data: {
         us_user_id: e.detail.value,
-        env:'false'
+        // env:'false'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -83,10 +83,10 @@ Page({
   us_user_id_confirm: function (e) {
     var that = this
     wx.request({
-      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/checklogin',
+      url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/checklogin',
       data: {
         us_user_id: e.detail.value,
-        env: 'true'
+        // env: 'true'
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -126,11 +126,11 @@ Page({
     })
     var gonghao = wx.getStorageSync('gonghao')
     wx.request({
-      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/login',
+      url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/login',
       data: {
         us_user_id: gonghao,
         us_password: that.data.us_password,
-        env:'false'
+        // env:'false'
       },
       header: {
         'content-type': 'application/json' // 默认值

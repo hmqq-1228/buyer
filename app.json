@@ -1,21 +1,88 @@
 {
   "pages": [
     "pages/register/register",
-    "pages/product/product",
+    
+    "pages/develop/develop",
+    
+    
+    
+    
+    
+    
+    
+    "pages/develop_add/develop_add",
+    
+    
+    
+    
+    
+    "pages/develop_describe/develop_describe",
+    
+    
+    
+    "pages/develop_compile/develop_compile",
     
     "pages/main/main",
     
+   
+   
+   
+    
+   
+    
+    
+      
     
     
     
-    "pages/supplier_management/supplier_management",
-    "pages/supplier_compile/supplier_compile",
+    "pages/develop_compile_describe/develop_compile_describe",
+    
+
+    "pages/product/product",
+    
+   
+    
+   
+    
+    
+  
+    
+    "pages/delete/delete",
+    "pages/affirm/affirm",
+    
+    
+    
+    
+    
+  
+    
+
+    
+    "pages/send_back/send_back",
+
+    
+   
+  
+    
+   
     "pages/supplier_add/supplier_add",
-    "pages/home/home",
-    "pages/compile/compile",
     
-    "pages/batch_deletion/batch_deletion",
-    "pages/details/details"
+    "pages/supplier_compile/supplier_compile",
+    "pages/supplier_management/supplier_management",
+   
+    
+    
+   
+    
+    
+    
+
+    
+    
+    
+   
+    "pages/home/home",
+    "pages/batch_deletion/batch_deletion"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,16 +97,16 @@
     "border-style": "#ccc",
     "list": [
       {
-        "selectedIconPath": "images/home.png",
-        "iconPath": "images/home.png",
-        "pagePath": "pages/main/main",
-        "text": "首页"
-      },
-      {
         "selectedIconPath": "images/address_book.png",
         "iconPath": "images/address_book.png",
         "pagePath": "pages/main/main",
         "text": "通讯录"
+      },
+      {
+        "selectedIconPath": "images/home.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/main/main",
+        "text": "首页"
       },
       {
         "selectedIconPath": "images/my.png",

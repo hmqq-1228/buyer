@@ -1,0 +1,31 @@
+<!-- 批量删除 -->
+<view class='batch_deletion_box'>
+  <view class='title__box'>
+    <view class='title'>
+      产品开发任务
+    </view>
+    <view class='all_select'>
+      <checkbox-group bindchange="check_all">
+        <label class="checkbox" wx:for="{{checks_all}}" wx:key='this'>
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" style='position:relative;top:-2.5px;' /> {{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="check_box">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox list" wx:for="{{array}}" wx:key="this">
+        <checkbox class='cbs' value="{{item.dai_bill_id}}" checked="{{item.checked}}" />
+        <view style='width:200rpx; margin-top:18rpx; '>任务编号</view>
+        <view style='width:90%;margin-left:20rpx; margin-top:20rpx;'>
+          <view class='order'>{{item.dai_bill_id}}</view>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='no_more {{no_more}}'>没有更多数据</view>
+  <view class='kongbai'></view>
+  <view class='btn'>
+    <button type='warn' bindtap='affirm'>确认</button>
+  </view>
+</view>

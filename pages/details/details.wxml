@@ -37,7 +37,7 @@
   <view style='background: #f2f2f2;padding-bottom:20rpx;'>
     <view class='nr' wx:for="{{array}}" wx:key="this"> 
       <view class='size_particulars'>
-        <view class='size'>{{item.dard_sup_no == null ? '' : item.dard_sup_no}}</view>
+        <view class='size'>{{item.dadd_desc_det == null ? '' : item.dadd_desc_det}}</view>
         <view class='particulars'>{{item.dard_prod_name == null ? '' : item.dard_prod_name}}</view>
       </view>
       <view class='compile' data-index='{{index}}' bindtap='compile'>编辑</view>

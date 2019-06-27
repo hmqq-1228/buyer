@@ -4,7 +4,7 @@
   <view class='supplier_unit_box'>
     <picker class='unit' bindchange="bindPicker_unit" value="{{unit_index}}" range="{{unit}}" range-key="{{'gc_name'}}">
       <view class="picker">
-        供方单位：{{unit[unit_index].gc_name}}
+        供方单位：{{unit[unit_index].gc_name}} 
       </view>
     </picker>
     <image src='/images/jinru.png' class='img'></image>

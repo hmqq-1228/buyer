@@ -1,63 +1,62 @@
 <view class='supplier_box'>
-<!-- 供应商编号 -->
-<view class='number_box'>
-<view class='number'>供应商编号：</view>
-</view>
-<view class='add_box'>
-<view class='name'>
-<input class='name use' ></input>
-<view class='word' >名称</view>
-</view>
-<view class='full_name'>
-<input class='full_name use' ></input>
-<view class='word' >全名</view>
-</view>
-<view class='linkname'>
-<input class='linkname use' ></input>
-<view class='word' >联系人</view>
-</view>
-<view class='phone'>
-<input class='phone use' ></input>
-<view class='word' >联系电话</view>
-</view>
+  <!-- 供应商编号 -->
+  <view class='number_box'>
+    <view class='number' bindblur='number_blur'>供应商编号：{{details.sl_supplier_id}}</view>
+  </view>
+  <view class='add_box' id='supplier_name'>
+    <!-- <view class='name'> -->
+    <text >名称</text>
+    <input bindblur='sl_supplier_name'  value='{{details.sl_supplier_name}}' ></input>
+    <image src='/images/exclamation.png' class='exclamation' wx:if="{{exclamation}}"></image>
+  </view>
+  <!-- </view> -->
+  <view class='add_box'>
+    <text>全名</text>
+    <input bindblur='sl_full_name' type='text' value='{{details.sl_full_name}}'></input>
+  </view>
+  <view class='add_box'>
+    <text>联系人</text>
+    <input bindblur='sl_linkman' id='linkname1' value='{{details.sl_linkman}}' ></input>
+  </view>
+  <view class='add_box'>
+    <text>联系电话</text>
+    <input id='tel' bindblur='sl_phone' value='{{details.sl_phone}}'></input>
+  </view>
+  <view class='add_ress'>
+    <view class='add_id'>联系地址</view>
+    <textarea class='web use2' id='address' bindblur='sl_address'  value='{{details.sl_address}}'></textarea>
+  </view>
+  <view class='add_space'></view>
+  <view class='add_ress'>
+    <view class='add_id'>公司主页</view>
+    <textarea class='web use2' id='web1' bindblur='sl_homepage' value='{{details.sl_homepage}}'></textarea>
+  </view>
 
+  <view class='add_ress'>
+    <view class='add_id'>电子邮件</view>
+    <textarea class='web use2' bindblur='sl_email'  value='{{details.sl_email}}'></textarea>
+  </view>
 
-<view class='address'>
-<input class='contact_address use2' ></input>
-<view class='word2' >联系地址</view>
-</view>
-<view class='web'>
-<input class='web use2'></input>
-<view class='word2' >公司主页</view>
-</view>
+  <view class='add_ress'>
+    <view class='add_id'>备注</view>
+    <textarea class='web use2' id='remark1' bindblur='sl_memo' value='{{details.sl_memo}}'></textarea>
+  </view>
 
-<view class='email'>
-<input class='email use2'></input>
-<view class='word2' >电子邮件</view>
-</view>
-
-<view class='remark'>
-<input class='remark use2'></input>
-<view class='word2' >备注</view>
-</view>
-
-<view class="tui-menu-list">
-<view class='start use'>
-    <view class='word3'>启用</view>
+  <view class="tui-menu-list">
+    <view class='start_use'>
+      <view class='word_three'>启用</view>
     </view>
-    <switch class="tui-fr" checked="{{isChecked1}}" bindchange="changeSwitch1"/>
+    <switch class="tui-fr" checked="{{isChecked}}" bindchange="changeSwitch1" />
   </view>
 
 
-<!-- <view class='start'>
+  <!-- <view class='start'>
 <input class='start use'></input>
 <view class='word3' >启用</view>
 <view class="body-view"  >
     <switch checked bindchange="switchChange" />
 </view>
 </view> -->
- <view class='kongbai'></view>
-  <button type="warn" class='btn1' bindtap='delete'>保存</button>
-</view>
-
+  <view class='kongbai'></view>
+  <button type="warn" class='btn1' bindtap='save'>保存</button>
 </view>

@@ -1,0 +1,65 @@
+<view class='home_box'>
+  <!-- 搜索框 -->
+  <view class='search_box'>
+    <view class="section">
+      <input class='search_input' value='{{keyword}}' confirm-type="search" placeholder="搜索" placeholder-class="placeholders" bindinput="change_search" bindconfirm="search" />
+    </view>
+    <image class='search_img' src='/images/search.png' bindtap='search'></image>
+    <image class='cancel_img' src='/images/white_cha.png' bindtap='cancel'></image>
+    <image src='/images/menu.png' bindtap='menu' class='menu_img'></image>
+    <!-- 下拉 -->
+    <view class='menu {{switch}}' id='menu_1'>
+      <!-- 添加 -->
+      <view class='add'bindtap="add">
+        <image class='img' src='/images/add.png'></image>
+        <text class='word'>添加</text>
+      </view>
+      <!-- 退回 -->
+      <view class='return'>
+        <image class='img' src='/images/return.png'></image>
+        <text class='word' bindtap='send_back'>退回</text>
+      </view>
+      <!-- 审核 -->
+      <view class='check'>
+        <image class='img' src='/images/check.png'></image>
+        <text class='word' bindtap='check'>确认</text>
+      </view>
+      <!-- 删除 -->
+      <view class='delete'>
+        <image class='img' src='/images/delete.png'></image>
+        <text class='word' bindtap='delete'>删除</text>
+      </view>
+    </view>
+
+
+  </view>
+  <!-- 筛选 -->
+  <view class='screen_box'>
+    <view class='condition'>
+      <view class='time' bindtap='time'>
+        <view class='{{color_time}}'>时间</view>
+        <image class='{{time_hui}}' src='/images/sanjiao_hui.png'></image>
+        <image class='{{time_zheng}}' src='/images/sanjiao_zheng.png'></image>
+      </view>
+      <view class='grade' bindtap='grade'>
+        <view class='{{color_grade}}'>等级</view>
+        <image class='{{grade_hui}}' src='/images/sanjiao_hui.png'></image>
+        <image class='{{grade_zheng}}' src='/images/sanjiao_zheng.png'></image>
+      </view>
+    </view>
+    <view class='name'>
+      <image src='/images/screen.png'></image>
+      <text>筛选</text>
+    </view>
+  </view>
+  <!-- 列表123456 -->
+  <view class='list' wx:for="{{array}}" data-index='{{index}}' wx:key="this" bindtap='details'>
+    <text class='task_number'>任务编号:{{item.dai_bill_id}}</text>
+    <text class='proposer'>开发申请人:{{item.dai_who_apply}}</text>
+    <text class='develop_grade' >开发等级:{{item.level_str}}</text>
+    <text class='finish_date'>期望完成日期:{{item.dai_finish_date}}</text>
+    <view class="{{item.dai_status}}">{{item.active_str}}</view>
+    <image src='/images/jinru.png'></image>
+  </view>
+  <view class='no_more {{no_more}}'>没有更多数据</view>
+</view>

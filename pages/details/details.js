@@ -176,7 +176,7 @@ Page({
       title: '加载中',
     })
     that.setData({
-      no_more: 'hidden',
+      no_more: 'hidden', 
       page:1
     })
     var dai_who_find = wx.getStorageSync('us_user_id')

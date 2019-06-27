@@ -5,231 +5,284 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array:[{
-      // monicker: "桃桃食品",
-      // thicker:"张道乐",
-      // linkman:'张希斌',
-      // tel:'0518149649849'
-    }],
-    time_hui:'hidden',
-    time_zheng:'show',
-    grade_hui:'hidden',
-    grade_zheng:'show',
-    keywords:'',
+    sl_supplier_id: '',
+    details: '',
+    control: '',
+    sl_supplier_name: '', //供应商名字
+    sl_full_name: '', //供应商全名
+    sl_linkman: '', //联系人
+    sl_phone: '', //联系电话
+    sl_address: '', //联系地址
+    sl_homepage: '', //公司主页
+    sl_email: '', //联系邮箱
+    sl_memo: '', //备注
+    exclamation: false, //感叹号
+    supplier_word:false
 
   },
-
-  // 搜索输入框失去焦点的时候
-  change_search:function(e){
+  sl_full_name: function(e) {
     this.setData({
-      keywords:e.detail.value
+      sl_full_name: e.detail.value
     })
   },
-  //点击键盘上的搜索和搜索图标的时候
-  search: function (e) {
+  sl_linkman: function(e) {
+    this.setData({
+      sl_linkman: e.detail.value
+    })
+  },
+  sl_phone: function(e) {
+    this.setData({
+      sl_phone: e.detail.value
+    })
+  },
+  sl_address: function(e) {
+    this.setData({
+      sl_address: e.detail.value
+    })
+  },
+  sl_homepage: function(e) {
+    this.setData({
+      sl_homepage: e.detail.value
+    })
+  },
+  sl_email: function(e) {
+    this.setData({
+      sl_email: e.detail.value
+    })
+  },
+  sl_memo: function(e) {
+    this.setData({
+      sl_memo: e.detail.value
+    })
+  },
+  sl_supplier_name: function (e) {
+    this.setData({
+      sl_supplier_name: e.detail.value
+    })
+  },
+
+
+  //名字不重复
+  sl_supplier_name: function(e) {
     var that = this
-    this.setData({
-      page: 1
-    })
-    console.log(that.data.keywords)
     var dai_who_find = wx.getStorageSync('us_user_id')
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     wx.request({
-      url: 'https://cj.panduo.com.cn/api/index',
+      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/supplier/checksup',
       data: {
+        sl_supplier_name: e.detail.value,
         dai_who_find: dai_who_find,
-        keywords: that.data.keywords,
-        total: 10,
         getkey: us_user_id_pass,
-        page: 1,
-        date: that.data.date,
-        level: that.data.level,
-        env:'false'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data.data.data)
-        that.setData({
-          array: res.data.data.data,
-          no_more: 'hidden',
-        })
+        if (res.data.status == '0') {
+          // console.log(res.data.status)
+          that.setData({
+            sl_supplier_name: e.detail.value,
+            exclamation: true,
+            supplier_word: true,
+          })
+          console.log(that.data.exclamation)
+          console.log(that.data.supplier_word)
+        }else{
+          that.setData({
+            sl_supplier_name: e.detail.value,
+            exclamation: false,
+            supplier_word: false
+          })
+        }
       }
     })
   },
-  // 点击取消的时候
-  cancel:function(){
-    this.setData({
-      keywords: ''
+
+
+  //保存并启用
+  baocun: function() {
+    var that = this
+    wx.showLoading({
+      title: '保存中',
     })
+    if (that.data.details.sl_supplier_name == '') {
+      wx.showToast({
+        title: '名称不能为空',
+        icon: 'none',
+        duration: 2000,
+        mask: true
+      })
+    } else {
+      var dai_who_find = wx.getStorageSync('us_user_id')
+      var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
+      // console.log(that.data.sl_supplier_name)
+      wx.request({
+        url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
+        data: {
+          dai_who_find: wx.getStorageSync('us_user_id'),
+          getkey: us_user_id_pass,
+          sl_supplier_name:that.data.sl_supplier_name ,
+          sl_full_name: that.data.sl_full_name,
+          sl_linkman: that.data.sl_linkman,
+          sl_phone: that.data.sl_phone,
+          sl_address: that.data.sl_address,
+          sl_homepage: that.data.sl_homepage,
+          sl_email: that.data.sl_email,
+          sl_memo: that.data.sl_memo,
+          control: 1
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          if (res.data.status == 0) {
+            // that.setData({
+            //   exclamation: true
+            // })
+            wx.showToast({
+              title: '供应商不能为空',
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+          } else if (res.data.status ==1 ) {
+            // that.setData({
+            //   exclamation: false
+            // })
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+          } else {
+            // that.setData({
+            //   exclamation: false
+            // })
+            wx.showToast({
+              title: '保存成功',
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+           
+          }
+
+        }
+      })
+    }
+  },
+  //保存并退出
+  delete: function() {
+    var that = this
+    wx.showLoading({
+      title: '保存中',
+    })
+    if (that.data.details.sl_supplier_name == '') {
+      wx.showToast({
+        title: '名称不能为空',
+        icon: 'none',
+        duration: 2000,
+        mask: true  
+      })
+    } else {
+      var dai_who_find = wx.getStorageSync('us_user_id')
+      var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
+      wx.request({
+        url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
+        data: {
+          dai_who_find: wx.getStorageSync('us_user_id'),
+          getkey: us_user_id_pass,
+          sl_supplier_name: that.data.sl_supplier_name,
+          sl_full_name: that.data.sl_full_name,
+          sl_linkman: that.data.sl_linkman,
+          sl_phone: that.data.sl_phone,
+          sl_address: that.data.sl_address,
+          sl_homepage: that.data.sl_homepage,
+          sl_email: that.data.sl_email,
+          sl_memo: that.data.sl_memo,
+          control: 0
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          if (res.data.status == 0) {
+            wx.hideLoading()
+            wx.showToast({
+              title: '供应商不能为空',
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+          } else if (res.data.status == 1) {
+            wx.showToast({
+              title: '供应商重复存在',
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+          } else {
+            wx.showToast({
+              title: '保存成功',
+              icon: 'none',
+              duration: 2000,
+              mask: true
+            })
+          }
+          // wx.navigateBack({
+
+          // })
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    var that = this
-    that.setData({
-      no_more: 'hidden',
-      page:1,
-      time_hui: 'hidden',
-      time_zheng: 'show',
-      grade_hui: 'hidden',
-      grade_zheng: 'show',
-      time_check: 0,
-      grade_check: 0,
-      keywords: ''
-    })
-    var dai_who_find = wx.getStorageSync('us_user_id')
-    var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
-    wx.request({
-      url: 'https://cj.panduo.com.cn/api/index',
-      data: {
-        dai_who_find: dai_who_find,
-        keywords: '',
-        getkey: us_user_id_pass,
-        page:1,
-        date:'',
-        // level: 0,
-        total: 10,
-        env:'false'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        that.setData({
-          array: res.data.data.data
-        })
-      }
-    })
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-    var that = this
-    that.setData({
-      no_more: 'hidden',
-      page: 1,
-      time_hui: '',
-      time_zheng: 'hidden',
-      grade_hui: 'hidden',
-      grade_zheng: 'show',
-      time_check: 0,
-      grade_check: 0,
-      keywords: ''
-    })
-    var dai_who_find = wx.getStorageSync('us_user_id')
-    var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
-    wx.request({
-      url: 'https://cj.panduo.com.cn/api/index',
-      data: {
-        dai_who_find: dai_who_find,
-        keywords: '',
-        getkey: us_user_id_pass,
-        page: 1,
-        date: '',
-        level: 0,
-        total: 10,
-        env:'false'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        that.setData({
-          array: res.data.data.data
-        })
-      }
-    })
-    //模拟加载
-    setTimeout(function () {
-      // complete
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
-    }, 1500);
-  },
+  onPullDownRefresh: function() {
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    var that = this;
-      if (that.data.no_more =='hidden'){
-        that.setData({
-          load: false,
-          loading: true,//加载动画的显示
-          page: that.data.page * 1 + 1,
-        })
-        var dai_who_find = wx.getStorageSync('us_user_id')
-        var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
-        wx.request({
-          url: 'https://cj.panduo.com.cn/api/index',
-          data: {
-            dai_who_find: dai_who_find,
-            keywords: '',
-            getkey: us_user_id_pass,
-            page: that.data.page,
-            date: that.data.date,
-            level: that.data.level,
-            total: 10,
-            env:'false'
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success: function (res) {
-            var content = that.data.array.concat(res.data.data.data)//将放回结果放入content
-            that.setData({
-              array: content,
-              load: true,
-              loading: false,
-            })
-            if (res.data.data.data.length < 10) {
-              that.setData({
-                no_more: 'show'
-              })
-            }
-          }
-        })
-      }
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

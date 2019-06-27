@@ -1,0 +1,77 @@
+<view class='develop_box'>
+  <!-- 开发类型 -->
+  <view class="section">
+    <view class="section__title">开发类型</view>
+    <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+      <view class="picker">
+        {{array1[index1]}}
+        <image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+  <!-- 开发等级 -->
+  <view class="section">
+    <view class="section__title">开发等级</view>
+    <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+      <view class="picker">
+        {{array2[index2]}}
+        <image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+  <!-- 期望完成日期 -->
+  <view class="section">
+    <view class="section__title">期望完成日期</view>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      <view class="picker" >
+        {{date}}<image class='section_img' src='/images/jinru.png'></image>
+      </view>
+    </picker>
+  </view>
+
+ <view class='end_box'>
+    <!-- 找货人 -->
+    <view class='person_looking'>找货人：{{zhaohuoren}}</view>
+    <!-- 开发申请人 -->
+    <view class='shenqing_word'>开发申请人：</view>
+    <input class='shenqing' type='text' value='{{zhaohuoren}}' placeholder-class='placeholder'  bindinput='shenqingren'/>
+    <view class='select' wx:if="{{select_check}}">
+      <text bindtap='gonghao' wx:for="{{us_user_names}}" data-index='{{index}}' wx:key="this">{{item.us_user_name}}</text>
+    </view>
+  </view>
+  <view class='list_box'>
+    <view>产品开发清单</view>
+    <view class='add' bindtap='product'>添加描述</view>
+  </view>
+  <view style='background: #f2f2f2;padding-bottom:20rpx;'>
+    <view class='nr' wx:for="{{array}}" wx:key="this"> 
+      <view class='size_particulars'>
+        <view class='size'>{{item.dadd_desc_det == null ? '' : item.dadd_desc_det}}</view>
+        <view class='particulars'>{{item.dadd_prod_desc == null ? '' : item.dadd_prod_desc}}</view>
+      </view>
+      <view class='compile' data-index='{{index}}' bindtap='compile'>编辑</view>
+    </view>
+    <view class='zanwu {{zanwu}}'>
+      暂无清单  
+    </view>
+  </view>
+  <view>
+  </view>
+  <view class='no_more {{no_more}}'>没有更多数据</view>
+  <view class='kongbai'></view>
+  <button class='btn' bindtap='submit'>提交</button>
+  <view class='toast-box' hidden='{{!ifName}}'>
+    <view class='toastbg'></view>
+    <view class='showToast'>
+      <view class='toast-title'>
+        <text>找货回复</text>
+      </view>
+      <view class='toast-main'>
+        <view class='toast-input'>
+          <input placeholder='请输入找货回复' bindinput='setValue' data-name='stuEidtName'></input>
+        </view>
+      </view>
+      </view>
+      </view>
+  <button class='btn' type='primary' size='default' bindtap='default'>保存</button>
+</view>

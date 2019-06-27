@@ -1,46 +1,47 @@
 <view class='supplier_box'>
   <!-- 搜索框 -->
-<view class='add_box'>
-<view class='name'>
-<input class='name use' ></input>
-<view class='word' >名称</view>
-</view>
-<view class='full_name'>
-<input class='full_name use' ></input>
-<view class='word' >全名</view>
-</view>
-<view class='linkname'>
-<input class='linkname use' ></input>
-<view class='word' >联系人</view>
-</view>
-<view class='phone'>
-<input class='phone use' ></input>
-<view class='word' >联系电话</view>
-</view>
+  <!-- 供应商编号 -->
+  <view class='add_box'>
+    <!-- <view class='name'> -->
+    <text>名称</text>
+    <input bindblur='sl_supplier_name' ></input>
+    <text class='supplier_word' wx:if="{{supplier_word}}">供应商重复</text>
+    <image src='/images/exclamation.png' wx:if="{{exclamation}}" class='exclamation'></image>
+  </view>
+  <!-- </view> -->
+  <view class='add_box'>
+    <text>全名</text>
+    <input bindinput='sl_full_name' type='text' maxlength='80'></input>
+    
+  </view>
+  <view class='add_box'>
+    <text>联系人</text>
+    <input bindinput='sl_linkman' id='linkname1'></input>
+  </view>
+  <view class='add_box'>
+    <text>联系电话</text>
+    <input id='tel' bindinput='sl_phone'></input>
+  </view>
+  <view class='add_ress'>
+    <view class='add_id'>联系地址</view>
+    <textarea class='web use2' id='address' bindinput='sl_address'></textarea>
+  </view>
+  <view class='add_space'></view>
+  <view class='add_ress'>
+    <view class='add_id'>公司主页</view>
+    <textarea class='web use2' id='web1' bindinput='sl_homepage'></textarea>
+  </view>
 
+  <view class='add_ress'>
+    <view class='add_id'>电子邮件</view>
+    <textarea class='web use2' bindinput='sl_email'></textarea>
+  </view>
 
-<view class='address'>
-<input class='contact_address use2' ></input>
-<view class='word2' >联系地址</view>
-</view>
-<view class='web'>
-<input class='web use2'></input>
-<view class='word2' >公司主页</view>
-</view>
-
-<view class='email'>
-<input class='email use2'></input>
-<view class='word2' >电子邮件</view>
-</view>
-
-<view class='remark'>
-<input class='remark use2'></input>
-<view class='word2' >备注</view>
-</view>
-
- <view class='kongbai'></view>
-  <button type="primary" class='btn1' bindtap='baocun' >保存并启用</button>
+  <view class='add_ress'>
+    <view class='add_id'>备注</view>
+    <textarea  bindinput='sl_memo' class='web use2' id='remark1' ></textarea>
+  </view>
+  <view class='kongbai'></view>
+  <button type="primary" class='btn1' bindtap='baocun'>保存并启用</button>
   <button type="warn" class='btn2' bindtap='delete'>保存并退出</button>
-</view>
-
 </view>

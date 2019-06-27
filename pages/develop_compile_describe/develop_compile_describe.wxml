@@ -1,0 +1,62 @@
+<view class='develop_box'>
+
+  <view class='describe_box'>
+    <view class='describe_word'>产品描述：</view>
+    <textarea class='describe_nr' bindinput='dadd_prod_desc' value='{{dadd_prod_desc}}'></textarea>
+  </view>
+  <!-- 第一行 -->
+  <view class='one'>
+    <view class='left'>运营审核人：{{us_user_name == null? '' : us_user_name}}</view>
+    <view class='right1'></view>
+    <view class='right_'>   预估产品线：
+    <input type='text' class='right'  bindinput='pc_class_name'  value='{{supplier_val}}' bindblur='supplier'></input>
+    </view>
+    <!-- 模糊查询下拉 -->
+    <view class='select {{select}}'>
+      <scroll-view scroll-y>
+        <view class='sel_name' wx:for="{{select_arr}}" wx:key="this" bindtap='supplier_val' data-index='{{index}}'>
+          {{item.pc_class_name}}
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 第二行 -->
+  <view class='two'>
+    <view class='right1'>
+      <view class='right_'>找货模式：</view>
+      <input class='right_fa' placeholder='拿货开发' disabled="true" placeholder-style='color:#000' bindinput='dadd_find_mode ' value='{{dadd_find_mode}}'></input>
+    </view>
+    <view class='left_fu' bindinput='dadd_prod_no_easter' value='{{dadd_prod_no_easter}}'>复活产品编号</view>
+  </view>
+  <view class='add_box_shu'>
+  <text>需求款数</text>
+  <input type="number" id='linkname1' bindinput='dadd_need_qty' value='{{dadd_need_qty}}'></input> 
+  </view>
+
+
+
+  <!-- <view class='amount'>需求款数</view> -->
+  <view class='end'>
+    <view class='word'>图片</view>
+    <view class='img_box'>
+      <view class='add_img' bindtap="chooseImage">
+        <image src='/images/add_img.png'></image>
+      </view>
+      <view class='add_img_box'>
+        <!-- 存放上传的图片的盒子 -->
+        <block wx:for="{{images}}" wx:key="*this">
+          <view class="q-image-wrap imgs" >
+            <!-- 图片缩略图  -->
+            <image  class="q-image" wx:if="{{checks == 1}}" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">删除
+              <!-- <image src='/images/×.png' class='close'></image> -->
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <button type="warn" class='btn1' bindtap='delete'>删除</button>
+  <button type="primary" class='btn2' bindtap='baocun'>保存</button>
+</view>

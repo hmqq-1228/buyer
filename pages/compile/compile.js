@@ -284,7 +284,6 @@ Page({
                   dard_bill_id: that.data.dard_bill_ids,
                   getkey: us_user_id_pass,
                   directory_name: 'NEW_PROD_REPLY_PIC',
-                  env: 'false'
                 },
                 success: function (res) {
                   var jsonObj = JSON.parse(res.data);
@@ -447,6 +446,7 @@ Page({
           },
           
           success(res) {
+            console.log(res)
             if (res.data.data.dard_prod_pic_path != null){
               var len = res.data.data.dard_prod_pic_path.length
               var dard_bill_ids = res.data.data.dard_bill_id
@@ -457,7 +457,7 @@ Page({
                 dard_bill_ids: res.data.data.dard_bill_id
               })
               that.data.images.forEach(function (item, index, arr) {
-                var item_ = "https://cjimage.panduo.com.cn/upload/SHOOT_RULE_PIC/" + dard_bill_ids + '/' + item
+                var item_ = "https://cjimage.panduo.com.cn/upload/NEW_PROD_REPLY_PIC/" + dard_bill_ids + '/' + item
                 var items = "images[" + index + "]";
                 that.setData({
                   [items]: item_

@@ -1,0 +1,260 @@
+.develop_box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #F2F2F2;
+}
+.section{
+  width: 100%;
+  height: 80rpx;
+  border: 1px solid gainsboro;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 80rpx 0 0;
+  position: relative;
+}
+.section__title{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #A9A2A4;
+  padding-left: 10rpx;
+}
+.section_img{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 15rpx;
+  right: 5rpx;
+}
+.end_box{
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.person_looking{
+  width: 50%;
+  height: 80rpx;
+  border: 1px solid gainsboro;
+  background-color: #ccc;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  padding-left: 15rpx;
+
+}
+.shenqing_word{
+  width: 26%;
+  font-size: 28rpx;
+  background-color: #fff;
+  padding-left: 15rpx;
+  height: 80rpx;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  line-height: 79rpx;
+}
+.shenqing{
+  width: 24%;
+  height: 80rpx;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  background-color: #fff;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  padding-left: 15rpx;
+}
+.placeholder{
+  color: #AAA;
+}
+.jinru{
+  position: absolute;
+  top: 15rpx;
+  right: 5rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.picker{
+  height: 80rpx;
+  line-height: 70rpx;
+  text-align:right;
+}
+picker{
+  font-size: 28rpx;
+  width: 70%;
+}
+.select{
+  width: 50%;
+  max-height: 400rpx;
+  background: #FFF; 
+  position: absolute;
+  top: 80rpx;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+.btn{
+  width: 100%;
+  position:absolute;
+  bottom: 0;
+}
+/* 产品开发清单 */
+
+.list_box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #3ba0eb;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 添加产品 */
+
+.add {
+  color: #fd2127;
+}
+
+/* 字和编辑的盒子 */
+
+.nr {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* 字的盒子 */
+
+.size_particulars {
+  box-sizing: border-box;
+  padding-top: 8rpx;
+  font-size: 28rpx;
+  width: 80%;
+}
+
+/* 第一行字 */
+
+.size {
+  color: #98959a;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  padding-top: 2rpx;
+  margin-bottom: 10rox;
+  padding-left: 17rpx;
+}
+
+/* 第二行字 */
+
+.particulars {
+  color: #5b544c;
+  padding-left: 17rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+ white-space: nowrap;
+}
+
+/* 编辑 */
+
+.compile {
+  height: 60rpx;
+  line-height: 45rpx;
+  color: #98959a;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+  padding-top: 15rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-top: 15rpx;
+  border-left: 1px solid #98959a;
+}
+
+/* 取消底部固定定位的padding */
+
+.kongbai {
+  width: 100%;
+  height: 100rpx;
+  background: #f2f2f2;
+}
+
+/* 按钮 */
+
+.btn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #118ee9;
+  color: #f2f2f2;
+}
+.zanwu{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #2196f3;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  text-align: center;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}

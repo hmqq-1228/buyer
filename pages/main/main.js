@@ -6,9 +6,9 @@ Page({
   data: {
     mode: "scaleToFill",
     arr: [
-      '/images/timg.jpg',
-      '/images/logo.png',
-      '/images/jinru.png'
+      '/images/banner.jpg',
+      '/images/banner1.jpg',
+      '/images/banner2.jpg',
     ],
     indicatorDots: true,
     autoplay: true,
@@ -31,12 +31,12 @@ Page({
     var that = this
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     wx.request({
-      url: 'http://local.test.com/api/new_products_infomation_input/check',
+      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/check',
       data: {
         dai_who_find: wx.getStorageSync('us_user_id'),
         getkey: us_user_id_pass,
         fn_func_id: that.data.gongyingshang_id,
-        env: 'false',
+        
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -62,12 +62,12 @@ Page({
     var that = this
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     wx.request({
-      url: 'http://local.test.com/api/new_products_infomation_input/check',
+      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/check',
       data: {
         dai_who_find: wx.getStorageSync('us_user_id'),
         fn_func_id: that.data.renwu_id,
         getkey: us_user_id_pass,
-        env: 'false',
+        
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -75,7 +75,7 @@ Page({
       success(res) {
         if (res.data.status == 1) {
           wx.navigateTo({
-            url: '/pages/supplier_management/supplier_management',
+            url: "/pages/develop/develop",
           })
         } else {
           wx.showToast({
@@ -93,12 +93,12 @@ Page({
     var that = this
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     wx.request({
-      url: 'http://local.test.com/api/new_products_infomation_input/check',
+      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/check',
       data: {
         dai_who_find: wx.getStorageSync('us_user_id'),
         getkey: us_user_id_pass,
         fn_func_id: that.data.caigou_id,
-        env: 'false',
+        
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -144,20 +144,22 @@ Page({
     that.setData({
       name: username
     })
-   
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     wx.request({
-      url: 'http://local.test.com/api/new_products_infomation_input/home',
+      url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/home',
       data: {
         dai_who_find: wx.getStorageSync('us_user_id'),
         getkey: us_user_id_pass,
-        env:'false',
       },
+      method:'GET',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+       
         that.setData({
+          // console.log(res.data.data[0]),
+          nav:[],
           nav: res.data.data[0],
           total: res.data.data[1].total,
           gongyingshang_id: res.data.data[0][0].fn_func_id,
