@@ -218,7 +218,7 @@ Page({
 
 
 
-
+//保存跳转
   default: function() {
     var that = this
     var dai_who_find = wx.getStorageSync('us_user_id')
@@ -252,7 +252,7 @@ Page({
         // wx.navigateTo({
         //   url: '/pages/develop_describe/develop_describe?dai_bill_id_=' + that.data.dadd_bill_id,
         // })
-        wx.navigateTo({
+        wx.reLaunch({
           url: '/pages/develop/develop' ,
         })
       }

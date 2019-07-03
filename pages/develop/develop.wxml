@@ -1,7 +1,9 @@
 <view class='home_box'>
   <!-- 搜索框 -->
   <view class='search_box'>
+   <button class='fanhui' size='mini' type='default' bindtap='fanhui'>返回</button>
     <view class="section">
+   
       <input class='search_input' value='{{keyword}}' confirm-type="search" placeholder="搜索" placeholder-class="placeholders" bindinput="change_search" bindconfirm="search" />
     </view>
     <image class='search_img' src='/images/search.png' bindtap='search'></image>

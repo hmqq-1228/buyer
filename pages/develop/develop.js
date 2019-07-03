@@ -209,6 +209,12 @@ Page({
       keyword: e.detail.value
     })
   },
+  //点击返回
+  fanhui:function(){
+    wx.reLaunch({
+      url: '../main/main',
+    })
+  },
   //点击键盘上的搜索和搜索图标的时候
   search: function(e) {
     var that = this
@@ -299,7 +305,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    
   },
 
   /**
@@ -385,7 +391,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+   
   },
 
   /**

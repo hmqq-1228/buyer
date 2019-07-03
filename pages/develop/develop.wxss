@@ -21,28 +21,31 @@
   background: #FFF;
 }
  .section{
-  width: 84%;
+  width: 70%;
   background: #FFF;
   font-size: 30rpx;
   color: #333;
   border-radius: 10rpx;
+  margin-right: 100rpx;
 }
 .placeholders{
   font-size: 30rpx;
   color: #bbb;
 }
 .search_input{
+  width: 122%;
   height: 70rpx;
   background-color: #f2f2f2;
   border-radius: 4%;
   box-sizing: border-box;
-  padding-left:80rpx; 
+  padding-left:68rpx; 
+  margin-left: 12rpx;
 }
 .search_img{
   position: absolute;
   top:18rpx;
-  left:35rpx;
-  width: 55rpx;
+  left:154rpx;
+  width: 59rpx;
   height: 55rpx;
 }
 .search_img1{
@@ -241,8 +244,15 @@
 .cancel_img{
  position: absolute;
   top:30rpx;
-  right:145rpx;
+  right:117rpx;
   width: 30rpx;
   height: 30rpx;
   z-index: 100;
+}
+.fanhui{
+  width: 19%;
+  margin-left:-15rpx;
+  margin-top: 2px;
+  /* color:green; */
+  font-size: 24rpx;
 }

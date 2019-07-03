@@ -3,6 +3,7 @@
     <image class='title_img' src='/images/timg.jpg'></image>
     <view class='title_word'>欢迎使用潘朵新品开发系统，{{name}}</view>
   </view>
+ 
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
     <block wx:for="{{arr}}" wx:key="this">
       <swiper-item>

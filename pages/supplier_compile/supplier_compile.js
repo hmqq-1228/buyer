@@ -66,46 +66,6 @@ Page({
       [sl_memo]: e.detail.value
     })
   },
-  //名字不重复
-  // sl_supplier_name: function (e) {
-  //   var that = this
-  //   var dai_who_find = wx.getStorageSync('us_user_id')
-  //   var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
-  //   wx.request({
-  //     url: 'http://cjtest.panduo.com.cn/api/new_products_infomation_input/supplier/checksups',
-  //     data: {
-  //       sl_supplier_name: e.detail.value,
-  //       dai_who_find: dai_who_find,
-  //       getkey: us_user_id_pass,
-  //     },
-  //     header: {
-  //       'content-type': 'application/json' // 默认值
-  //     },
-  //     success(res) {
-  //       if (res.data.status == '0') {
-  //         that.setData({
-  //           exclamation: true
-  //         })
-  //         wx.showToast({
-  //           title: res.data.msg,
-  //           icon: 'none',
-  //           duration: 2000,
-  //           mask: true
-  //         })
-  //       } else {
-  //         console.log(11111)
-  //         that.setData({
-  //           sl_supplier_name: e.detail.value,
-  //           exclamation: false
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
-
-
-
-
 
   // 启用状态改变的时候
   changeSwitch1(e) {

@@ -438,7 +438,7 @@ Page({
                       duration: 2000,
                       mask: true
                     })
-                      wx.reLaunch({
+                      wx.navigateTo({
                         url: '../develop_compile/develop_compile?dadd_bill_id=' + that.data.dai_bill_id_,
                       })
                    

@@ -117,7 +117,7 @@ Page({
       var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
       // console.log(that.data.sl_supplier_name)
       wx.request({
-        url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
+        url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
         data: {
           dai_who_find: wx.getStorageSync('us_user_id'),
           getkey: us_user_id_pass,
@@ -189,7 +189,7 @@ Page({
       var dai_who_find = wx.getStorageSync('us_user_id')
       var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
       wx.request({
-        url: 'https://cjtest.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
+        url: 'https://cj.panduo.com.cn/api/new_products_infomation_input/supplier/insert',
         data: {
           dai_who_find: wx.getStorageSync('us_user_id'),
           getkey: us_user_id_pass,
