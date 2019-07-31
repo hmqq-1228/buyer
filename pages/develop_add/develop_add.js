@@ -176,13 +176,14 @@ Page({
     var us_user_id_pass = wx.getStorageSync('us_user_id_pass')
     var dai_who_find = wx.getStorageSync('us_user_id')
     var shenqingren = wx.getStorageSync('us_user_name')
-    var myDate = new Date();
-    var y = myDate.getFullYear();    //获取完整的年份(4位,1970-????)
-    var m = myDate.getMonth()+1;       //获取当前月份(0-11,0代表1月)
-    var d = myDate.getDate()+1;        //获取当前日(1-31)
+    var myDate = new Date()
+    myDate.setTime(myDate.getTime() + 24 * 60 * 60 * 1000);
+    var year = myDate.getFullYear()
+    var month = (myDate.getMonth() + 1) < 10 ? '0' + (myDate.getMonth() + 1) : (myDate.getMonth() + 1)
+    var date1 = myDate.getDate() < 10 ? '0' + myDate.getDate() : myDate.getDate()
     this.setData({
       // date: '',
-      date: y + '-' + m + '-' + d,
+      date:year + '-' + month + '-' + date1,
       shenqingren: wx.getStorageSync('us_user_name'),
       zhaohuoren: wx.getStorageSync('us_user_name'),
       // zhaohuoren: '',
