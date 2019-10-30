@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
 	"appid": "wx36af255929b92677",
-	"projectname": "project_panduo",
+	"projectname": "buyer_app_client",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
